@@ -1,0 +1,18 @@
+%% MATLAB scipt for copy and rename the files
+
+for xx=["Batch", "of", "FolderNames"]  %
+
+    Folder_name=[convertStringsToChars(xx),'\'];
+    File_loc1=[Folder_name, '*.csv'];
+
+  f = dir(File_loc1);
+
+  if length(f)==4 
+  % if all folders have the same number of files: set a rule to avoid copy the same file again
+ 
+    fileFrom = [Folder_name, f(4).name];
+    fileTo = [Folder_name, 'FinalName.csv'];  % csv or other format
+    copyfile(fileFrom,fileTo);
+  end 
+
+end
