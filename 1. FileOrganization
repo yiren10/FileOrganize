@@ -16,3 +16,16 @@ for xx=["Batch", "of", "FolderNames"]  %
   end 
 
 end
+
+
+%% Current Folder:
+f = dir(pwd);
+fileFrom = [f(6).name];
+copyfile(fileFrom, 'FinalName.csv');
+
+
+%% Only rename:
+
+movefile('oldname.csv','newname.csv')
+
+%%
